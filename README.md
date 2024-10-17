@@ -1,66 +1,53 @@
-## Foundry
+# Foundry FundMe Cyfrin
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Project Structure
 
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```plaintext
+foundry-fundme-cyfrin/
+├── .github/
+│   └── workflows/
+│       └── test.yml
+├── .gitignore
+├── .gitmodules
+├── foundry.toml
+├── lib/
+│   ├── chainlink-brownie-contracts/
+│   ├── forge-std/
+│   └── foundry-devops/
+├── Makefile
+├── README.md
+├── script/
+│   ├── DeployFundMe.s.sol
+│   ├── DeployStorageFun.s.sol
+│   ├── HelperConfig.s.sol
+│   └── Interactions.s.sol
+├── src/
+│   └── exampleContracts/
+│       ├── FunWithStorage.sol
+│       ├── FundMe.sol
+│       └── PriceConverter.sol
+├── test/
+│   ├── integration/
+│   │   └── InteractionsTest.t.sol
+│   ├── mock/
+│   │   └── MockV3Aggregator.sol
+│   └── unit/
+│       ├── FundMeTest.t.sol
+│       └── ZkSyncDevops.t.sol
 ```
 
-### Test
+## Running Tests
 
-```shell
-$ forge test
+To run the tests, execute the following command:
+
+```bash
+forge test
 ```
 
-### Format
+## Contributing
 
-```shell
-$ forge fmt
-```
+If you wish to contribute to this project, please fork the repository and submit a pull request.
 
-### Gas Snapshots
+## License
 
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project is licensed under the [MIT License](LICENSE).
